@@ -27,6 +27,7 @@ const Button:React.FunctionComponent<Props> = ({text, color = "Primary", fWeight
         font-weight: ${fWeight || 400};
         padding: ${padding || '.2rem .6rem'};
         border-radius: .5rem;
+        height: fit-content;
         display: flex;
         align-items: center;
         justify-content: center;

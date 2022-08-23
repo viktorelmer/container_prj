@@ -11,8 +11,8 @@ const HeaderMain: React.FunctionComponent<Props> = (props) => {
         <HeadTitle>{TEXT.HEADER.MAIN_TITLE_1}<br/>{TEXT.HEADER.MAIN_TITLE_2}</HeadTitle>
         <LowTitle>{TEXT.HEADER.LOW_TITLE}</LowTitle>
         <ButtonsRow className="row mt-2 flex-nowrap justify-content-center">
-            <Button text={TEXT.HEADER.BUTTON_SELL} className="col-7 p-2 text-center pt-3 pb-3 m-3 mt-5 mb-5" fWeight="500"/>
-            <Button text={TEXT.HEADER.BUTTON_ACTIVE} color="White" className="col-7 p-2 text-center pt-3 pb-3 m-3 mt-5 mb-5" fWeight="500"/>
+            <Button text={TEXT.HEADER.BUTTON_SELL} className="col-7 p-2 text-center pt-3 pb-3 m-3 mt-5 mb-5 header-button" fWeight="500"/>
+            <Button text={TEXT.HEADER.BUTTON_ACTIVE} color="White" className="col-7 p-2 text-center pt-3 pb-3 m-3 mt-5 mb-5 header-button" fWeight="500"/>
         </ButtonsRow>
     </HeaderMainWrapper>
   );
@@ -48,4 +48,13 @@ const LowTitle = styled.span`
 
 const ButtonsRow = styled.div`
     font-weight: 500 !important;
-`
+
+    @media screen and (max-width: 650px) {
+        flex-wrap: wrap !important;
+
+        .header-button {
+            margin-top: 0 !important;
+            margin-bottom: .8rem !important;
+        }
+    }
+`;

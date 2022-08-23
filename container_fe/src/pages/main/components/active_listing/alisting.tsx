@@ -74,7 +74,7 @@ const ActiveListing: React.FunctionComponent = () => {
                 )}
             </AListingCards>
 
-            <Button text={TEXT.ACTIVE_LISTING.BUTTON_TEXT} className="col-2 text-center mt-5" padding="1.3rem"/>
+            <Button text={TEXT.ACTIVE_LISTING.BUTTON_TEXT} className="text-center mt-5 listing-button" padding="1.3rem"/>
         </ActiveListingWrapper>
     )
 }

@@ -1,6 +1,7 @@
 export const TEXT = {
     PRJ_VERSION_ALERT: 'Project version: ',
     HEADER: {
+        LOGO_TEXT: 'StorageeConnect',
         MAIN_TITLE_1: 'Self Storage Business',
         MAIN_TITLE_2: 'Buy. Sell. Learn.',
         LOW_TITLE: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sagittis, aliquam non tortor blandit lobortis. blandit',

@@ -117,6 +117,10 @@ const ManPhoto = styled.img`
     bottom: 0;
     border-radius: 0px 0px 300px 0px;
     z-index: 1;
+
+    @media screen and (max-width: 900px) {
+        margin-top: 15rem;
+    }
 `
 
 const WomanPhoto = styled.img`
@@ -124,6 +128,10 @@ const WomanPhoto = styled.img`
     left: 0;
     bottom: -3rem;
     z-index: 1;
+
+    @media screen and (max-width: 900px) {
+        width: 90%;
+    }
 `
 
 const LearnEverythingWrapper = styled.div`
@@ -151,6 +159,11 @@ const BuySelfInfo = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
+    @media screen and (max-width: 1200px) {
+        margin-top: -8rem;
+        margin-bottom: 23rem;
+    }
 `
 
 const HaveSelfWrapper = styled.div`
@@ -184,6 +197,12 @@ const HaveSelfInfo = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+
+    @media screen and (max-width: 1200px) {
+        margin-top: -5rem;
+        margin-bottom: 20rem;
+    }
 `
 
 const HaveSelfHeadTitle = styled.span`
