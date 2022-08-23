@@ -12,6 +12,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "bootstrap": "^5.2.0",
+    "env-cmd": "^10.1.0",
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,12 +23,20 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "env-cmd -f ./src/env/.env react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish-bump": "git add -A && git commit -m 'Bump version' && git push",
+    "publish-post": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
+    "bump-version:patch": "(yarn version --patch --no-git-tag-version); (cd ./ && yarn version --patch --no-git-tag-version); (cd ./ && yarn version --patch --no-git-tag-version);",
+    "bump-version:minor": "(yarn version --minor --no-git-tag-version); (cd ./ && yarn version --minor --no-git-tag-version); (cd ./ && yarn version --minor --no-git-tag-version);",
+    "bump-version:major": "(yarn version --major --no-git-tag-version); (cd ./ && yarn version --major --no-git-tag-version); (cd ./ && yarn version --patch --no-git-tag-version);",
+    "send:patch": "yarn run bump-version:patch; yarn run publish-bump; yarn publish-post",
+    "send:minor": "yarn run bump-version:minor; yarn run publish-bump; yarn publish-post",
+    "send:major": "yarn run bump-version:major; yarn run publish-bump; yarn publish-post"
   },
   "eslintConfig": {
     "extends": [

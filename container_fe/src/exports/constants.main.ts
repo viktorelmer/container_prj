@@ -14,5 +14,6 @@ export const COLOR_CONFIG: IColorConfig = Object.freeze({
     'Blue': {color: '#FFFFFF', bg: '#1849C6'}
 })
 
-
 export const BUTTON_TYPE = 'Contact'
+
+export const VERSION_LOG_STYLE = "color: #269800; font-weight: 800; font-size: 1rem";

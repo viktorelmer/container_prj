@@ -11,7 +11,8 @@ const CARDS_CONFIG: IStorageCard[] = [
         totalUnits: '89',
         occupancy: '50%',
         size: '40,233 Sq Ft',
-        id: 1
+        id: 1,
+        uniq_id: 1
     },
     {
         title: 'Heading of this Self Storage',
@@ -19,7 +20,8 @@ const CARDS_CONFIG: IStorageCard[] = [
         totalUnits: '89',
         occupancy: '50%',
         size: '40,233 Sq Ft',
-        id: 2
+        id: 2,
+        uniq_id: 2
     },
     {
         title: 'Heading of this Self Storage',
@@ -27,7 +29,8 @@ const CARDS_CONFIG: IStorageCard[] = [
         totalUnits: '89',
         occupancy: '50%',
         size: '40,233 Sq Ft',
-        id: 3
+        id: 3,
+        uniq_id: 3
     },
 ]
 
@@ -46,7 +49,7 @@ const Featured: React.FunctionComponent = () => {
 
             <FeaturedCards>
                 {CARDS_CONFIG.map((card) => 
-                        <StorageCard key={card.id} title={card.title} location={card.location} totalUnits={card.totalUnits} occupancy={card.occupancy} size={card.size} id={card.id}/>
+                    <StorageCard key={`featured_card_${card.uniq_id}`} title={card.title} location={card.location} totalUnits={card.totalUnits} occupancy={card.occupancy} size={card.size} id={card.id}/>
                 )}
             </FeaturedCards>
 

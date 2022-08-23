@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './App'; 
+import { VERSION_LOG_STYLE } from './exports/constants.main';
 import { getProjectVersionText } from './exports/utils';
 
 import './style.scss'
@@ -15,4 +16,4 @@ root.render(
   </React.StrictMode>
 );
 
-console.log(getProjectVersionText());
+console.log(getProjectVersionText(), VERSION_LOG_STYLE);

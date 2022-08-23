@@ -16,28 +16,32 @@ const CARDS: INewsCard[] = [
         time: '5hr ago',
         label: 'Buy',
         user: 'Raza',
-        id: 1
+        id: 1,
+        uniq_id: 1
     },
     {
         title: "Learn Everything about managing and operating a Self Storage",
         time: '2days ago',
         label: 'Operate',
         user: 'Raza',
-        id: 1
+        id: 1,
+        uniq_id: 2
     },
     {
         title: "Everything you need to know about selling a Self Storage",
         time: '3days ago',
         label: 'Sell',
         user: 'Raza',
-        id: 1
+        id: 1,
+        uniq_id: 3
     },
     {
         title: "Everything you need to know about how to buy a Self Storage",
         time: '5days ago',
         label: 'Buy',
         user: 'Raza',
-        id: 1
+        id: 1,
+        uniq_id: 4
     }
 ]
 
@@ -75,7 +79,7 @@ const HaveSelf: React.FunctionComponent = () => {
 
                 <LearnCards>
                     {CARDS.map(item => 
-                        <NewsCard title={item.title} key={item.id} user={item.user} id={item.id} time={item.time} label={item.label}/>
+                        <NewsCard title={item.title} key={item.uniq_id} user={item.user} id={item.id} time={item.time} label={item.label}/>
                     )}
                 </LearnCards>
             </LearnEverythingWrapper>

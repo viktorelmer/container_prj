@@ -16,6 +16,7 @@ export interface IStorageCard {
     size: string;
     id: number; 
     type?: string;
+    uniq_id: number;
 }
 
 export interface INewsCard {
@@ -23,5 +24,6 @@ export interface INewsCard {
     time: string;
     label: string;
     user: string;
-    id: number;  
+    id: number;
+    uniq_id: number;
 }

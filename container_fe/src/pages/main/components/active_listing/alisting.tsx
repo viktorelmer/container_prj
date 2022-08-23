@@ -13,7 +13,8 @@ const CARDS_CONFIG: IStorageCard[] = [
         totalUnits: '89',
         occupancy: '50%',
         size: '40,233 Sq Ft',
-        id: 1
+        id: 1,
+        uniq_id: 1
     },
     {
         title: 'Heading of this Self Storage',
@@ -21,7 +22,8 @@ const CARDS_CONFIG: IStorageCard[] = [
         totalUnits: '89',
         occupancy: '50%',
         size: '40,233 Sq Ft',
-        id: 2
+        id: 2,
+        uniq_id: 2
     },
     {
         title: 'Heading of this Self Storage',
@@ -29,23 +31,16 @@ const CARDS_CONFIG: IStorageCard[] = [
         totalUnits: '89',
         occupancy: '50%',
         size: '40,233 Sq Ft',
-        id: 3
+        id: 3,
+        uniq_id: 3
     },
-
     {
         location: 'Jersy City, NJ',
         totalUnits: '89',
         occupancy: '50%',
         size: '40,233 Sq Ft',
-        id: 1
-    },
-    {
-        title: 'Heading of this Self Storage',
-        location: 'Jersy City, NJ',
-        totalUnits: '89',
-        occupancy: '50%',
-        size: '40,233 Sq Ft',
-        id: 2
+        id: 1,
+        uniq_id: 4
     },
     {
         title: 'Heading of this Self Storage',
@@ -53,7 +48,17 @@ const CARDS_CONFIG: IStorageCard[] = [
         totalUnits: '89',
         occupancy: '50%',
         size: '40,233 Sq Ft',
-        id: 3
+        id: 2,
+        uniq_id: 5
+    },
+    {
+        title: 'Heading of this Self Storage',
+        location: 'Jersy City, NJ',
+        totalUnits: '89',
+        occupancy: '50%',
+        size: '40,233 Sq Ft',
+        id: 3,
+        uniq_id: 6
     }
 ]
 
@@ -67,10 +72,10 @@ const ActiveListing: React.FunctionComponent = () => {
 
             <AListingCards>
                 {CARDS_CONFIG.map((card, id) => 
-                    <>
-                        <StorageCard key={card.id} title={card.title} location={card.location} totalUnits={card.totalUnits} occupancy={card.occupancy} size={card.size} id={card.id}/>
+                    <React.Fragment key={`listing_card_${card.uniq_id}`} >
+                        <StorageCard title={card.title} location={card.location} totalUnits={card.totalUnits} occupancy={card.occupancy} size={card.size} id={card.id}/>
                         {!((id + 1) % 3) && <div className="w-100"></div>}
-                    </>
+                    </React.Fragment>
                 )}
             </AListingCards>
 
