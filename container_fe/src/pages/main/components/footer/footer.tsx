@@ -22,10 +22,10 @@ const Footer:React.FunctionComponent = () => {
                 <HelpBox>
                     <div>
                         <HelpTopTitle>{TEXT.FOOTER.HELP.TOP_TEXT}</HelpTopTitle> <br/>
-                        <HelpLowTitle>{TEXT.FOOTER.HELP.LOW_TEXT}</HelpLowTitle>
                     </div>
-                    <div>
-                        <Button text={TEXT.FOOTER.HELP.BUTTON_TEXT} color="Blue" padding="1rem 3rem" icon={PlaneIcon}/>
+                    <div className="d-flex">
+                        <HelpLowTitle>{TEXT.FOOTER.HELP.LOW_TEXT}</HelpLowTitle>
+                        <Button text={TEXT.FOOTER.HELP.BUTTON_TEXT} className="ml-2 help-button" color="Blue" padding="1rem 3rem" icon={PlaneIcon}/>
                     </div>
                 </HelpBox>
             </HelpWrapper>
@@ -46,7 +46,7 @@ const Footer:React.FunctionComponent = () => {
                     <FItemTitle>{TEXT.FOOTER.ABOUT.NEWSLETER.TITLE}</FItemTitle>
                     <FSubItem className="mt-3">{TEXT.FOOTER.ABOUT.NEWSLETER.LOW_TITLE}</FSubItem>
                     <Input placeholder={TEXT.FOOTER.ABOUT.NEWSLETER.PLACEHOLDER} className="mt-2"/>
-                    <Button text="Subscribe Now" color="Blue" className="col-5 mt-2" padding="1rem 1rem"/>
+                    <Button text="Subscribe Now" color="Blue" className="mt-2" padding="1rem 1rem"/>
                 </FooterItem>
                 <FooterItem>
                     <FItemTitle>{TEXT.FOOTER.ABOUT.SOCIAL}</FItemTitle>
@@ -65,10 +65,23 @@ const Footer:React.FunctionComponent = () => {
 const FooterWrapper = styled.div`
     display: flex;
     background: #FFFFFF;
+    justify-content: center;
+
+    @media screen and (max-width: 900px) {
+        flex-wrap: wrap;
+        padding: 2.2rem 1.2rem !important;
+    }
 `
 
 const FooterItem = styled.div`
     width: 40%;
+    margin: 0 .5rem;
+
+    @media screen and (max-width: 900px) {
+        font-weight: 700;
+        font-size: 17px;
+        margin: .7rem .5rem;
+    }
 `
 
 const FItemTitle = styled.span`
@@ -76,6 +89,12 @@ const FItemTitle = styled.span`
     font-family: 'Inter';
     font-weight: 700;
     font-size: 22px;
+    display: flex;
+
+    @media screen and (max-width: 900px) {
+        font-weight: 700;
+        font-size: 17px;
+    }
 `
 
 const FSubItem = styled.div`
@@ -109,12 +128,18 @@ const HelpBox = styled.div`
     padding: 7rem 3rem;
     width: 70%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    margin: auto;
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 30px 40px rgba(24, 73, 198, 0.1);
     border-radius: 10px;
-`
+
+
+    .help-button {
+        white-space: nowrap;
+        margin-left: 2rem;
+    }
+`;
 
 const HelpWrapper = styled.div`
     padding: 10rem 0;
